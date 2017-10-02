@@ -43,7 +43,7 @@
     	{
     		$t= array('time1' =>'1', );
     	}
-    }
+    
 
     $first = false ;
     $last = false  ;
@@ -343,4 +343,4 @@
         header('Content-Length: ' . $json_str);
         echo($json_str);
     }                   			
-    }  
+    
