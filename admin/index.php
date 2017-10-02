@@ -32,7 +32,7 @@ echo ini_get('display_errors');
 		);
 
 	$is_post = $_SERVER['REQUEST_METHOD'] === 'POST' ;
-	$db = database_get()';
+	$db = database_get();
 
 	if(!$is_post) $_SESSION['admin_query'] = $_SERVER['QUERY_STRING'];
 
@@ -42,7 +42,7 @@ echo ini_get('display_errors');
 			$apply_query -> execute();
 			$apply_count = $apply_query->fetch();
 		
-			$seat_query = $db ->prepare('SELECT COUNT(*) AS `c` FROM' `seat`) ;
+			$seat_query = $db ->prepare('SELECT COUNT(*) AS `c` FROM `seat`') ;
 			$seat_query -> execute();
 			$seat_count = $seat_query->fetch();
 
@@ -62,7 +62,7 @@ echo ini_get('display_errors');
 			$apply_month_accepted_query -> execute();
 			$apply_month_accepted_count = $apply_month_accepted_query->fetch();
 
-			$apply_history_query = $db ->prepare('SELECT COUNT(*) AS `c` FROM `apply`';
+			$apply_history_query = $db ->prepare('SELECT COUNT(*) AS `c` FROM `apply`');
 			$apply_history_query ->execute();
 			$apply_history_count = $apply_history_query -> fetch();
 			
@@ -1450,7 +1450,7 @@ echo ini_get('display_errors');
             $accepted_apply_query->bindValue(':date', $apply['date']);
             $accepted_apply_query->execute();
             while (false !== ($accepted_apply = $accepted_apply_query->fetch())) {
-                $tc = array('time1'');
+                $tc = array('time1');
                 foreach ($tc as $c) if ($apply[$c] > 0 && $accepted_apply[$c] > 0) {
                     $time = times_to_str($apply);
                     if (empty($time)) $time = '（無時段）';
